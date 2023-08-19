@@ -1,16 +1,21 @@
-# STEP 1 Running Zookeeper and Kafka Server
-This Step for windows
-RUNNING ZOOKEEPER PROPERTIES
+# STEP 1 Running Zookeeper and Kafka Server for Windows
+( If You come from linux just read docomentation on https://kafka.apache.org/documentation/#quickstart )
+1. RUNNING ZOOKEEPER PROPERTIES
 .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
-
-RUNNING KAFKA SERVICES
+2. RUNNING KAFKA SERVICES
 .\bin\windows\kafka-server-start.bat .\config\server.properties
 
-CREATE TOPIC
-.\bin\windows\kafka-topics.bat --create --topic topic-demo --bootstrap-server localhost:9092
+# STEP 2 Running the Microservice
+1. Run Email-Service Application
+2. Run Order-service Application
+3. Run Stock-service Application
 
-SENDING MESSAGE BY TOPIC
-.\bin\windows\kafka-console-producer.bat --topic topic-demo --bootstrap-server localhost:9092
-
-.\bin\windows\kafka-console-consumer.bat --topic topic-demo --from-beginning --bootstrap-server localhost:9092
-
+# STEP 3 Testing the Application
+1. You can hit API in your Postman like curl below
+curl --location 'http://localhost:8080/api/v1/orders' \
+--header 'Content-Type: application/json' \
+--data '{
+    "name": "Glass",
+    "qty": 2,
+    "price": 600
+}'
