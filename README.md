@@ -1,4 +1,5 @@
 # STEP 1 Running Zookeeper and Kafka Server
+This Step for windows
 RUNNING ZOOKEEPER PROPERTIES
 .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
 
